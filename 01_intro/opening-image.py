@@ -1,8 +1,15 @@
 import cv2
+import os
 
-image_url = '../01-image/aircraft.jpg'
+# for get url/directory name
+base_url = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+image_url = os.path.join(base_url, '00_image')
 
-image = cv2.imread('aircraft.jpg')
+# image name
+image = os.path.join(image_url, 'aircraft.jpg')
+
+#image read
+image = cv2.imread(image)
 
 cv2.imshow('Label', image)
 cv2.waitKey()
